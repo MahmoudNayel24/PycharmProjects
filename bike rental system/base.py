@@ -5,7 +5,11 @@ class Bike:
         self.bikes_ordered = int(bikes_ordered)
         self.total_value = float(total_value)
         self.usage = float(usage)
+    def set_stock(self, new_stock):
+        self.stock = new_stock
 
+    def get_stock(self):
+        return self.stock
 
 class Hourly(Bike):
     def __init__(self, stock, bikes_ordered, usage, total_value):

@@ -8,11 +8,15 @@ choice_1 = 0
 while True:
 
     while True:
-        choice_1 = int(input("1-Bike rental\n2-Bike return\n"))
-        if choice_1 == 1 or choice_1 == 2:
-            break
-        else:
-            print("Please chose one from the above choices! ")
+        try:
+            choice_1 = int(input("1-Bike rental\n2-Bike return\n"))
+            if choice_1 == 1 or choice_1 == 2:
+                break
+            else:
+                print("Please chose one from the above choices! ")
+        except ValueError:
+            print("Please enter a number!")
+
     if choice_1 == 1:
         while True:
             try:
@@ -29,6 +33,7 @@ while True:
 
         while True:
             try:
+                print("Family subscription from 3 to 5 bikes")
                 bike_orders = int(input("Please choose the number of bikes you want to rent by maximum of 5: "))
                 if 1 <= bike_orders <= 5:
                     break
